@@ -11,7 +11,7 @@
      • Add an item: find "↓ COPY BLOCK ↓ … ↑ END BLOCK ↑" and duplicate it.
      • Sections marked  hidden  are ready but switched off until they
        have content — delete the word  hidden  to show them.
-     • The photo is profile.jpeg, which must sit in the same folder.
+     • The photo is profile.jpg, which must sit in the same folder.
      ================================================================== -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,9 @@
   @media(max-width:760px){nav a.opt{display:none}}
 
   /* keep section titles clear of the sticky header when jumping to them */
-  main section{scroll-margin-top:76px}
+  main section, main [id]{scroll-margin-top:76px}
+  .about p a{color:var(--text);border-bottom:1px solid var(--accent);transition:color .18s}
+  .about p a:hover{color:var(--accent)}
 
   /* hamburger (small screens only) — CSS-only, works without JavaScript */
   .nav-toggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
@@ -94,7 +96,7 @@
   @media(prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}}
 
   /* hero: name left, photo right */
-  .hero{padding:84px 0 76px}
+  .hero{padding:68px 0 56px}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
   .role{color:var(--muted);font-size:1rem;margin:0 0 12px}
   .name{font-size:clamp(2.6rem,6vw,4.3rem);font-weight:300;line-height:1.04}
@@ -116,15 +118,36 @@
   @media(prefers-reduced-motion:reduce){.portrait::before{animation:none}}
   @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:38px}.portrait{order:-1;justify-self:start;width:min(250px,66vw)}}
 
-  section.block{padding:72px 0;border-top:1px solid var(--line)}
-  .sec-head{max-width:62ch;margin-bottom:40px}
+  section.block{padding:50px 0;border-top:1px solid var(--line)}
+  .sec-head{max-width:62ch;margin-bottom:28px}
   .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.35rem)}
   .sec-head p{color:var(--muted);margin:13px 0 0}
 
   .about p{max-width:66ch;color:var(--muted-2);font-size:1.08rem;margin:0}
   .about p + p{margin-top:18px}
 
-  .grp + .grp{margin-top:46px}
+  /* profile + at-a-glance panel */
+  .about-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;align-items:start}
+  .about-grid .about-text p{max-width:none}
+  .about .about-grid p{max-width:62ch}
+  .glance{border:1px solid var(--line-2);border-radius:16px;padding:20px 22px;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+  .about .glance .glance-title{font-family:"Spectral",serif;font-style:italic;color:var(--accent);font-size:.9rem;margin:0 0 6px}
+  .glance .g{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .glance .g:last-child{border-bottom:none;padding-bottom:0}
+  .glance .g span{color:var(--muted);font-size:.84rem}
+  .glance .g b{font-weight:500;font-size:.93rem;color:var(--text)}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:28px}}
+
+  /* testimonials */
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .quote{margin:0;padding:28px 26px 24px;border:1px solid var(--line);border-radius:16px;position:relative}
+  .quote::before{content:"\201C";position:absolute;top:6px;left:20px;font-family:"Spectral",serif;font-size:4rem;line-height:1;color:var(--accent);opacity:.55}
+  .quote blockquote{margin:22px 0 18px;font-family:"Spectral",serif;font-weight:300;font-size:1.15rem;line-height:1.55;color:var(--text)}
+  .quote figcaption{display:flex;flex-direction:column;gap:2px}
+  .quote figcaption b{font-weight:500}
+  .quote figcaption span{color:var(--muted);font-size:.9rem}
+
+  .grp + .grp{margin-top:34px}
   .subhead{font-family:"Spectral",serif;font-weight:500;font-size:1.25rem;color:var(--text);margin:0 0 12px}
   .note{color:var(--muted);font-size:.88rem;margin:-4px 0 10px}
 
@@ -135,7 +158,7 @@
   @media(max-width:700px){.kit .row{grid-template-columns:1fr;gap:4px}}
 
   /* research highlights */
-  .proj{display:grid;grid-template-columns:260px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line)}
+  .proj{display:grid;grid-template-columns:260px 1fr;gap:32px;padding:22px 0;border-bottom:1px solid var(--line)}
   .proj:first-of-type{padding-top:6px}
   .proj h3{font-size:1.3rem}
   .proj ul{margin:0;padding:0;list-style:none}
@@ -179,7 +202,7 @@
   .interest .k{color:var(--accent);font-size:.82rem;font-style:italic;font-family:"Spectral",serif;margin:0 0 4px}
   @media(max-width:760px){.interests{grid-template-columns:1fr;gap:20px}}
 
-  section.block.compact{padding:40px 0}
+  section.block.compact{padding:28px 0}
   .outside{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
   .outside .label{margin:0}
   .chips{display:flex;flex-wrap:wrap;gap:10px}
@@ -237,6 +260,7 @@
     <a href="#publications">Publications</a>
     <a href="#courses">Professional development</a>
     <a href="#leadership">Leadership</a>
+    <!-- <a href="#testimonials">Testimonials</a>  uncomment once the section is switched on -->
     <a href="#contact">Contact</a>
   </nav>
   <a class="drawer-ext" href="https://www.linkedin.com/in/suraj-kumar-kothuri-5b61951aa" target="_blank" rel="noopener">LinkedIn</a>
@@ -258,17 +282,29 @@
         </div>
       </div>
       <div class="portrait">
-        <img src="profile.jpeg" alt="Suraj Kumar Kothuri">
+        <img src="profile.jpg" alt="Suraj Kumar Kothuri">
       </div>
     </div>
   </section>
 
   <!-- ============ PROFILE ============ -->
   <section class="block about" id="about">
-    <div class="wrap">
-      <p class="label">Profile</p>
-      <p>PhD researcher in biophotonics at Tyndall National Institute, graduating in time-domain diffuse optics (2027). My work spans the development of wearable systems for tissue measurement: optical design and alignment, miniaturisation and prototyping, photonics packaging, validation on tissue phantoms and in vivo, and data analysis.</p>
-      <p>I have contributed to a wearable tissue oximetry system based on low-cost LiDAR components, a 4 mm multimodal endoscopic probe and the first broadband optical characterisation of human bone, resulting in three journal papers and nine conference papers since 2024. I am now seeking photonics engineer (or related) positions in industry.</p>
+    <div class="wrap about-grid">
+      <div>
+        <p class="label">Profile</p>
+        <p>PhD researcher in biophotonics at Tyndall National Institute, graduating in time-domain diffuse optics (2027). My work spans the development of wearable systems for tissue measurement: optical design and alignment, miniaturisation and prototyping, photonics packaging, validation on tissue phantoms and in vivo, and data analysis.</p>
+        <p>I have contributed to a wearable tissue oximetry system based on low-cost LiDAR components, a 4 mm multimodal endoscopic probe and the first broadband optical characterisation of human bone. These works are available as <a href="#journals">published journal papers (3)</a> and <a href="#conferences">conference proceedings (9)</a>. I am now seeking photonics engineer (or related) positions in industry.</p>
+      </div>
+      <aside class="glance" aria-label="At a glance">
+        <p class="glance-title">At a glance</p>
+        <!-- ↓ COPY a row to add a fact -->
+        <div class="g"><span>Based in</span><b>Cork, Ireland</b></div>
+        <div class="g"><span>PhD</span><b>UCC / Tyndall National Institute, 2027</b></div>
+        <div class="g"><span>Specialism</span><b>Time-domain diffuse optics, wearable biophotonics</b></div>
+        <div class="g"><span>Output</span><b>3 journal papers · 9 peer-reviewed conference papers</b></div>
+        <div class="g"><span>Looking for</span><b>Photonics engineer roles in industry</b></div>
+        <div class="g"><span>Languages</span><b>English, Telugu, Hindi</b></div>
+      </aside>
     </div>
   </section>
 
@@ -363,7 +399,7 @@
     <div class="wrap">
       <div class="sec-head"><p class="label">Publications &amp; peer-reviewed conferences</p><h2>Three journal papers, nine peer-reviewed conference papers</h2></div>
 
-      <div class="grp">
+      <div class="grp" id="journals">
         <h3 class="subhead">Journal publications</h3>
         <p class="note">*Equal first author contribution.</p>
         <div class="rlist">
@@ -394,7 +430,7 @@
         <p class="more"><a href="https://scholar.google.com/citations?user=dAsh_q0AAAAJ" target="_blank" rel="noopener">All publications on Google Scholar →</a></p>
       </div>
 
-      <div class="grp">
+      <div class="grp" id="conferences">
         <h3 class="subhead">Conference papers: first author, presenter</h3>
         <div class="rlist">
           <!-- ↓ COPY BLOCK ↓ (conference paper) — Photonics West presentation goes here when ready -->
@@ -494,6 +530,25 @@
         <div class="card"><span class="dot"></span><h3>Collaboration</h3><p>[Concrete example]</p></div>
         <div class="card"><span class="dot"></span><h3>Mentoring &amp; teaching</h3><p>[Concrete example]</p></div>
         <div class="card"><span class="dot"></span><h3>Communication</h3><p>[Concrete example]</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============
+       Switched off until you have a quote: paste it in, fill the name and
+       title, then delete the word  hidden  below. For a second quote,
+       copy the COPY BLOCK. Also uncomment the Testimonials link in the
+       mobile menu. Always get the person's OK before publishing their words. -->
+  <section class="block" id="testimonials" hidden>
+    <div class="wrap">
+      <div class="sec-head"><p class="label">Testimonials</p><h2>In their words</h2></div>
+      <div class="quotes">
+        <!-- ↓ COPY BLOCK ↓ (one testimonial) -->
+        <figure class="quote">
+          <blockquote>[Paste the quote here, exactly as written.]</blockquote>
+          <figcaption><b>[Full name]</b><span>[Title, organisation · relationship, e.g. PhD supervisor]</span></figcaption>
+        </figure>
+        <!-- ↑ END BLOCK ↑ -->
       </div>
     </div>
   </section>
