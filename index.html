@@ -219,6 +219,28 @@
   footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.85rem}
   .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+  /* ---- pop-up (TEMPORARY testimonial request) ---- */
+  .ask-toggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+  .ask{position:fixed;right:20px;bottom:20px;z-index:60;width:min(320px,calc(100vw - 40px));
+    background:var(--bg-2);border:1px solid var(--line-2);border-radius:16px;padding:20px 20px 18px;
+    box-shadow:0 18px 50px rgba(0,0,0,.55);overflow:hidden;
+    opacity:0;visibility:hidden;transform:translateY(16px);animation:askIn .45s ease 1.8s forwards}
+  .ask::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--spectral)}
+  .ask-toggle:checked + .ask{display:none}
+  @keyframes askIn{to{opacity:1;visibility:visible;transform:none}}
+  @media(prefers-reduced-motion:reduce){.ask{animation:none;opacity:1;visibility:visible;transform:none}}
+  .ask-x{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:9px;border:1px solid var(--line-2);
+    display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;color:var(--muted-2);
+    cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .ask-x:hover{color:var(--text);border-color:var(--accent)}
+  .ask-k{font-family:"Spectral",serif;font-style:italic;color:var(--accent);font-size:.92rem;margin:4px 0 6px}
+  .ask-t{color:var(--muted-2);font-size:.95rem;line-height:1.5;margin:0 34px 14px 0}
+  .ask-btn{display:inline-flex;font-size:14px;font-weight:600;color:#080a0f;background:var(--text);
+    padding:10px 18px;border-radius:999px;transition:transform .15s}
+  .ask-btn:hover{transform:translateY(-2px)}
+  .ask-toggle:focus-visible + .ask .ask-x{outline:2px solid var(--accent);outline-offset:2px}
+  @media(max-width:520px){.ask{right:12px;left:12px;bottom:12px;width:auto}}
 </style>
 </head>
 <body>
@@ -544,11 +566,13 @@
       <div class="quotes">
         <!-- ↓ COPY BLOCK ↓ (one testimonial) -->
         <figure class="quote">
-          <blockquote>[I have worked closely with Suraj for almost three years. He is diligent and thoughtful, with the determination to follow through on whatever he sets his mind to. He would be a valuable addition to any team.]
-          <figcaption><b>[Hasti Yavari]</b><span>[Post Doctoral Researcher, University of Basel, Switzerland]</span></figcaption>
+          <blockquote>I have worked closely with Suraj for almost three years. He is diligent and thoughtful, with the determination to follow through on whatever he sets his mind to. He would be a valuable addition to any team.</blockquote>
+          <figcaption><b>Hasti Yavari</b><span>Post Doctoral Researcher, University of Basel, Switzerland</span></figcaption>
         </figure>
         <!-- ↑ END BLOCK ↑ -->
       </div>
+      <!-- TEMPORARY: link to the testimonial form. Delete this line when no longer needed. -->
+      <p class="more"><a href="testimonial.html">Worked with me? Add a testimonial →</a></p>
     </div>
   </section>
 
@@ -586,6 +610,18 @@
 
 </main>
 
+<!-- ============ TEMPORARY: TESTIMONIAL POP-UP ============
+     To remove later: delete from here to "END POP-UP", plus the
+     "pop-up" CSS block and the "pop-up" script at the bottom. -->
+<input type="checkbox" id="ask-close" class="ask-toggle" aria-label="Dismiss testimonial request">
+<aside class="ask" id="ask" aria-label="Testimonial request">
+  <label for="ask-close" class="ask-x" aria-label="Close">&times;</label>
+  <p class="ask-k">Worked with me?</p>
+  <p class="ask-t">I'd be grateful for a few words about our work together, for my portfolio.</p>
+  <a class="ask-btn" href="testimonial.html">Write a testimonial</a>
+</aside>
+<!-- ============ END POP-UP ============ -->
+
 <footer>
   <div class="wrap foot">
     <span>© 2026 Suraj Kumar Kothuri</span>
@@ -603,6 +639,22 @@
     for(var i=0;i<links.length;i++){ links[i].addEventListener('click', close); }
     document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
     window.addEventListener('resize', function(){ if(window.innerWidth > 760) close(); });
+  })();
+</script>
+
+
+<script>
+  // pop-up (TEMPORARY): once closed, stay closed on later visits.
+  (function(){
+    var box = document.getElementById('ask'), t = document.getElementById('ask-close');
+    if(!box || !t) return;
+    try{ if(localStorage.getItem('askTestimonialClosed')==='1'){ box.hidden = true; } }catch(e){}
+    t.addEventListener('change', function(){
+      try{ localStorage.setItem('askTestimonialClosed','1'); }catch(e){}
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key==='Escape' && !box.hidden){ t.checked = true; t.dispatchEvent(new Event('change')); }
+    });
   })();
 </script>
 
