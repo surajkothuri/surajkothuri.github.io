@@ -36,7 +36,7 @@
   ::selection{background:rgba(102,178,255,.28)}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
   h1,h2,h3{font-family:"Spectral",Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.15;margin:0}
-  .label{color:var(--accent);font-size:.9rem;font-family:"Spectral",serif;font-style:italic;margin:0 0 14px}
+  .label{color:var(--accent);font-size:1.3rem;font-family:"Spectral",serif;font-style:italic;margin:0 0 12px}
   b.me{color:var(--text);font-weight:600}
 
   .spectrum-bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--spectral);z-index:50}
@@ -184,7 +184,9 @@
   .rlist .m a:hover{border-color:var(--accent)}
   .rlist .m b.me{color:var(--muted-2)}
   @media(max-width:620px){.rlist .r{grid-template-columns:1fr;gap:2px}}
+  .rlist.noyr .r{grid-template-columns:1fr}
 
+  .pub-cta{margin-top:26px}
   .more{margin-top:18px;font-size:.95rem}
   .more a{color:var(--accent);border-bottom:1px solid transparent}
   .more a:hover{border-color:var(--accent)}
@@ -301,6 +303,8 @@
         <div class="cta-row">
           <a class="btn primary" href="#research">See my research</a>
           <a class="btn ghost" href="#contact">Get in touch</a>
+          <!-- CV: upload a PDF named exactly Suraj_Kothuri_CV.pdf next to index.html -->
+          <a class="btn ghost" href="Suraj_Kothuri_CV.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
       </div>
       <div class="portrait">
@@ -315,16 +319,16 @@
       <div>
         <p class="label">Profile</p>
         <p>PhD researcher in biophotonics at Tyndall National Institute, graduating in time-domain diffuse optics (2027). My work spans the development of wearable systems for tissue measurement: optical design and alignment, miniaturisation and prototyping, photonics packaging, validation on tissue phantoms and in vivo, and data analysis.</p>
-        <p>I have contributed to a wearable tissue oximetry system based on low-cost LiDAR components, a 4 mm multimodal endoscopic probe and the first broadband optical characterisation of human bone. These works are available as <a href="#journals">published journal papers (3)</a> and <a href="#conferences">conference proceedings (9)</a>. I am now seeking photonics engineer (or relevant) positions.</p>
+        <p>I have contributed to a wearable tissue oximetry system based on low-cost LiDAR components, a 4 mm multimodal endoscopic probe and the first broadband optical characterisation of human bone. These works are available as <a href="#publications">published journal papers (3)</a> and <a href="#publications">conference proceedings (9)</a>. I am now seeking photonics engineer (or relevant) positions.</p>
+        <p>I work comfortably in multidisciplinary teams, bridging physics, engineering and biomedical research, and I value clear communication with collaborators from different backgrounds. I have taken part in outreach activities that share science with wider audiences, and I bring a strong team spirit to shared projects, from mentoring students to coordinating work across research groups.</p>
       </div>
       <aside class="glance" aria-label="At a glance">
         <p class="glance-title">At a glance</p>
         <!-- ↓ COPY a row to add a fact -->
-        <div class="g"><span>Based in</span><b>Cork, Ireland</b></div>
+        <div class="g"><span>Based in</span><b>Ireland</b></div>
         <div class="g"><span>PhD</span><b>UCC / Tyndall National Institute, 2027</b></div>
-        <div class="g"><span>Skills</span><b> Optics, Photonics, Biophotonics, Biomedical Optics </b></div>
+        <div class="g"><span>Skills</span><b> Optics, Photonics, Biophotonics, Biomedical Optics, Prototyping </b></div>
         <div class="g"><span>Output</span><b>3 journal papers · 9 peer-reviewed conference papers</b></div>
-        <div class="g"><span>Looking for</span><b>Photonics engineer (/relevant) roles</b></div>
       </aside>
     </div>
   </section>
@@ -359,7 +363,7 @@
       <div class="sec-head"><p class="label">Expertise</p><h2>Technical skills</h2></div>
       <div class="kit">
         <!-- ↓ COPY BLOCK ↓ (skill category) -->
-        <div class="row"><b>Optical systems</b><span>Complex optical systems, free space optics, Zemax, lasers, single photon detectors, silicon photomultipliers, single photon counters (TCSPC), diffuse optics, wearable biophotonics</span></div>
+        <div class="row"><b>Optical systems</b><span>Complex optical systems, free space optics, lasers, single photon detectors, silicon photomultipliers, single photon counters (TCSPC), diffuse optics, wearable biophotonics</span></div>
         <!-- ↑ END BLOCK ↑ -->
         <div class="row"><b>Photonics integration</b><span>Wire bonding</span></div>
         <div class="row"><b>Prototyping &amp; CAD</b><span>Miniaturisation, prototype building, multimodal system integration, 3D CAD modelling, 3D printing</span></div>
@@ -378,18 +382,16 @@
       <div class="sec-head">
         <p class="label">Research</p>
         <h2>Research highlights</h2>
-        <p>PhD Researcher, Biophotonics@Tyndall, Tyndall National Institute · Cork, Ireland · February 2023 – present</p>
+        <p>PhD Researcher, Tyndall National Institute · Ireland · 2023 – present</p>
       </div>
 
       <!-- ↓ COPY BLOCK ↓ (research project) -->
       <div class="proj">
         <div><h3>Wearable time-domain tissue oximetry</h3></div>
         <ul>
-          <li>Developing a wearable-footprint time-domain NIRS system for tissue oxygenation monitoring, based on low-cost LiDAR time-of-flight components, advancing on current portable state-of-the-art time-domain systems.</li>
-          <li>Applied diffuse optics and photon migration theory to extract tissue biomarkers from low-resolution, low-count time-of-flight data.</li>
-          <li>Characterised <em>in vivo</em> performance by measuring arm-muscle oxygenation changes during and after cuff occlusion.</li>
-          <li>Presented the approach as first author at Biomedical Congress 2026; journal manuscript in preparation.</li>
-          <li>Conducted an exploratory study of time-domain pulse oximetry, presented as first author at the European Conference on Biomedical Optics (2025).</li>
+          <li>Developed a time-domain NIRS system for tissue oxygenation monitoring, from concept to prototype and system validation. Built from LiDAR components, the system is low-cost, fast and suitable for wearable biomedical applications.</li>
+          <li>Prepared and led the research ethics application for light-based measurements on human volunteers on behalf of a 40-researcher team, coordinating input across the team and managing the study protocol and supporting documentation.</li>
+          <li>Presented the work as first author at two international conferences; journal publication in preparation.</li>
         </ul>
       </div>
       <!-- ↑ END BLOCK ↑ -->
@@ -398,10 +400,10 @@
         <div><h3>Multimodal endoscopic probe</h3></div>
         <ul>
           <li>Integrated the time-of-flight channel into a 4.0 mm side-viewing endoscopic probe alongside a chip-on-tip micro-camera.</li>
-          <li>Benchmarked the probe on MEDPHOT phantoms for stability, repeatability and robustness, and performed phantom and in vivo time-of-flight measurements.</li>
+          <li>Benchmarked the probe on MEDPHOT phantoms for stability, repeatability and robustness. Carried out phantom and <em>in vivo</em> studies.</li>
           <li>Developed the analysis pipeline to retrieve tissue absorption and scattering coefficients from time-of-flight data.</li>
-          <li>Coordinated phantom design with industry manufacturing partner BioPixS.</li>
-          <li>Published as equal first author in <em>Journal of Physics: Photonics</em> (2026).</li>
+          <li>Coordinated phantom design with industry manufacturing partner.</li>
+          <li>Published in <em>Journal of Physics: Photonics</em> (2026).</li>
         </ul>
       </div>
 
@@ -416,69 +418,43 @@
     </div>
   </section>
 
-  <!-- ============ PUBLICATIONS & CONFERENCES ============ -->
+  <!-- ============ JOURNALS & CONFERENCES ============ -->
   <section class="block" id="publications">
     <div class="wrap">
-      <div class="sec-head"><p class="label">Publications &amp; peer-reviewed conferences</p><h2>Three journal papers, nine peer-reviewed conference papers</h2></div>
-
-      <div class="grp" id="journals">
-        <h3 class="subhead">Journal publications</h3>
-        <p class="note">*Equal first author contribution.</p>
-        <div class="rlist">
-          <!-- ↓ COPY BLOCK ↓ (journal paper) -->
-          <div class="r">
-            <div class="yr">2026</div>
-            <div>
-              <div class="t">Multimodal endoscopy platform combining superficial tissue chip-on-tip micro-camera imaging and depth-resolved time-domain diffuse optical spectroscopy</div>
-              <div class="m">Yavari H*, <b class="me">Kothuri SK*</b>, Lanka P, Andersson-Engels S, et al. · <em>Journal of Physics: Photonics</em> 8(3), 035021</div>
-            </div>
-          </div>
-          <!-- ↑ END BLOCK ↑ -->
-          <div class="r">
-            <div class="yr">2026</div>
-            <div>
-              <div class="t">Raman spectroscopy based framework for in-vivo assessment of bone composition</div>
-              <div class="m">Ma H, Lanka P, <b class="me">Kothuri SK</b>, Jayet B, Mahadevan-Jansen A, Andersson-Engels S, Konugolu Venkata Sekar S, Gautam R · <em>Journal of Physics: Photonics</em> 8(1), 015065 · <a href="https://iopscience.iop.org/article/10.1088/2515-7647/ae485e" target="_blank" rel="noopener">Read paper</a></div>
-            </div>
-          </div>
-          <div class="r">
-            <div class="yr">2025</div>
-            <div>
-              <div class="t">Broadband time domain diffuse optical characterization of human cadaver bone from 500 to 1100 nm</div>
-              <div class="m"><b class="me">Kothuri SK</b>, MacMahon D, Lanka P, O'Flynn C, Henn P, Andersson-Engels S, Gautam R, Konugolu Venkata Sekar S · <em>Scientific Reports</em> 15, 25931 · <a href="https://www.nature.com/articles/s41598-025-06138-y" target="_blank" rel="noopener">Read paper</a></div>
-            </div>
+      <div class="sec-head">
+        <p class="label">Journals &amp; conferences</p>
+        <h2>Publications</h2>
+      </div>
+      <div class="rlist noyr">
+        <!-- ↓ COPY BLOCK ↓ (publication) -->
+        <div class="r">
+          <div>
+            <div class="t">Multimodal endoscopy platform combining superficial tissue chip-on-tip micro-camera imaging and depth-resolved time-domain diffuse optical spectroscopy</div>
+            <div class="m"><b class="me">Kothuri SK</b>, Yavari H, Lanka P, Andersson-Engels S, et al. · <em>Journal of Physics: Photonics</em> 8(3), 035021 · <a href="https://iopscience.iop.org/article/10.1088/2515-7647/ae889e" target="_blank" rel="noopener">Read paper</a></div>
           </div>
         </div>
-        <p class="more"><a href="https://scholar.google.com/citations?user=dAsh_q0AAAAJ" target="_blank" rel="noopener">All publications on Google Scholar →</a></p>
-      </div>
-
-      <div class="grp" id="conferences">
-        <h3 class="subhead">Conference papers: first author, presenter</h3>
-        <div class="rlist">
-          <!-- ↓ COPY BLOCK ↓ (conference paper) — Photonics West presentation goes here when ready -->
-          <div class="r"><div class="yr">2026</div><div><div class="t">Low Cost LiDARs for Wearable Biomedical Applications</div><div class="m">Clinical and Translational Biophotonics, Optica</div></div></div>
-          <!-- ↑ END BLOCK ↑ -->
-          <div class="r"><div class="yr">2025</div><div><div class="t">Exploratory study on time domain approach for pulse oximetry application</div><div class="m">European Conference on Biomedical Optics, Optica · <a href="https://opg.optica.org/abstract.cfm?uri=ECBO-2025-S1F.4" target="_blank" rel="noopener">Abstract</a></div></div></div>
-          <div class="r"><div class="yr">2024</div><div><div class="t">Time domain broadband characterization of human cadaver bone, 500–1100 nm</div><div class="m">Optica Publishing Group</div></div></div>
+        <!-- ↑ END BLOCK ↑ -->
+        <div class="r">
+          <div>
+            <div class="t">Broadband time domain diffuse optical characterization of human cadaver bone from 500 to 1100 nm</div>
+            <div class="m"><b class="me">Kothuri SK</b>, MacMahon D, Lanka P, O'Flynn C, Henn P, Andersson-Engels S, Gautam R, Konugolu Venkata Sekar S · <em>Scientific Reports</em> 15, 25931 · <a href="https://www.nature.com/articles/s41598-025-06138-y" target="_blank" rel="noopener">Read paper</a></div>
+          </div>
+        </div>
+        <div class="r">
+          <div>
+            <div class="t">Low Cost LiDARs for Wearable Biomedical Applications</div>
+            <div class="m">Conference paper · Clinical and Translational Biophotonics, Optica</div>
+          </div>
+        </div>
+        <div class="r">
+          <div>
+            <div class="t">Exploratory study on time domain approach for pulse oximetry application</div>
+            <div class="m">Conference paper · European Conference on Biomedical Optics, Optica · <a href="https://opg.optica.org/abstract.cfm?uri=ECBO-2025-S1F.4" target="_blank" rel="noopener">Abstract</a></div>
+          </div>
         </div>
       </div>
-
-      <div class="grp">
-        <h3 class="subhead">Conference papers: second author, presenter</h3>
-        <div class="rlist">
-          <div class="r"><div class="yr">2026</div><div><div class="t">Side Viewing Endoscopic Photon Time-of-flight System for Monitoring Chemotherapy Response</div><div class="m">Clinical and Translational Biophotonics, Optica</div></div></div>
-          <div class="r"><div class="yr">2026</div><div><div class="t">Continuous Wave–photon Time of Flight (CW-pToF) Hybrid Analytical Model for Estimation of Broadband Absolute Optical Properties</div><div class="m">Clinical and Translational Biophotonics, Optica</div></div></div>
-          <div class="r"><div class="yr">2024</div><div><div class="t">Endoscopic photon time-of-flight system for monitoring chemotherapy response</div><div class="m">Optica Publishing Group</div></div></div>
-        </div>
-      </div>
-
-      <div class="grp">
-        <h3 class="subhead">Conference papers: co-author</h3>
-        <div class="rlist">
-          <div class="r"><div class="yr">2025</div><div><div class="t">Noninvasive In-vivo Bone Characterisation</div><div class="m">European Conference on Biomedical Optics, Optica</div></div></div>
-          <div class="r"><div class="yr">2025</div><div><div class="t">Bone Quality Assessment Through Turbid Media</div><div class="m">Optical Molecular Probes, Imaging and Drug Delivery, Optica</div></div></div>
-          <div class="r"><div class="yr">2025</div><div><div class="t">Defining an Ideal Offset Metric for Assessing Subsurface Bone Quality through Raman Spectroscopy</div></div></div>
-        </div>
+      <div class="cta-row pub-cta">
+        <a class="btn ghost" href="https://scholar.google.com/citations?user=dAsh_q0AAAAJ" target="_blank" rel="noopener">Click here for full list →</a>
       </div>
     </div>
   </section>
@@ -509,9 +485,9 @@
 
       <div class="grp">
         <h3 class="subhead">Schools &amp; industry visits</h3>
-        <div class="c"><b>Summer School on Biophotonics</b><span>Island of Hven, Sweden · 2025</span></div>
-        <div class="c"><b>Technical visit, Seagate Technologies</b><span>Derry, Northern Ireland · 2023</span></div>
-        <div class="c"><b>Summer School on Optics and Photonics, IIT Delhi</b><span>June 2022 · presented master's thesis</span></div>
+        <div class="c"><b>Summer School on Biophotonics</b><span>Sweden</span></div>
+        <div class="c"><b>Technical visit, Seagate Technologies</b><span>Northern Ireland</span></div>
+        <div class="c"><b>Summer School on Optics and Photonics, IIT Delhi</b><span>India</span></div>
       </div>
     </div>
   </section>
@@ -520,15 +496,13 @@
   <section class="block" id="leadership">
     <div class="wrap">
       <div class="sec-head"><p class="label">Leadership</p><h2>Leadership &amp; mentoring</h2></div>
-      <div class="rlist">
+      <div class="rlist noyr">
         <!-- ↓ COPY BLOCK ↓ (role) -->
         <div class="r">
-          <div class="yr">2024 – 2025</div>
-          <div><div class="t">PIADS CDT Student Representative, Tyndall National Institute</div><div class="m">February 2024 – December 2025 · Represented Tyndall-based students to the CDT management board.</div></div>
+          <div><div class="t">PIADS CDT Student Representative, Tyndall National Institute</div><div class="m">Represented Tyndall-based students to the CDT management board.</div></div>
         </div>
         <!-- ↑ END BLOCK ↑ -->
         <div class="r">
-          <div class="yr">During PhD</div>
           <div><div class="t">Student mentor, Tyndall National Institute</div><div class="m">Mentored undergraduate and postgraduate students on summer internships, final-year projects and master's projects.</div></div>
         </div>
       </div>
@@ -583,7 +557,8 @@
       <p class="label">Outside work</p>
       <!-- ↓ COPY a <span> to add an interest -->
       <div class="chips">
-        <span>Sound engineering</span>
+        <span>Audio Recording Engineer</span>
+        <span>Sound Mixing and Mastering</span>
         <span>Books</span>
         <span>Business case studies</span>
         <span>Tech and AI</span>
@@ -604,7 +579,7 @@
         <a href="https://www.linkedin.com/in/suraj-kumar-kothuri-5b61951aa" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=dAsh_q0AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         <a href="https://orcid.org/0000-0003-3761-7584" target="_blank" rel="noopener">ORCID · 0000-0003-3761-7584</a>
-        <!-- <a href="cv.pdf">Download CV</a>  — add once a CV PDF is in this folder -->
+        <a href="Suraj_Kothuri_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
       </div>
     </div>
   </section>
@@ -626,7 +601,7 @@
 <footer>
   <div class="wrap foot">
     <span>© 2026 Suraj Kumar Kothuri</span>
-    <span>Cork, Ireland</span>
+    <span>Ireland</span>
   </div>
 </footer>
 
